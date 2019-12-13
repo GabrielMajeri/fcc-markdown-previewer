@@ -4,12 +4,37 @@
   box-sizing: border-box;
 }
 
+header > h1,
+main > div > h2 {
+  margin: 0;
+  text-align: center;
+}
+
+main {
+  padding-bottom: 2rem;
+}
+
+main > div {
+  margin: 0.5rem 1rem 0;
+}
+
+header {
+  margin: 2rem 1rem;
+}
+
 textarea {
+  resize: none;
   width: 100%;
-  resize: vertical;
+  min-height: 50vh;
 }
 
 @media all and (min-width: 700px) {
+  header {
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   main {
     display: flex;
   }

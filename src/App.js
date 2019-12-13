@@ -31,8 +31,6 @@ const App = () => {
     setRawMarkdown(e.target.value);
   };
 
-  const lineCount = rawMarkdown.split(/\r\n|\r|\n/).length;
-
   return (
     <>
       <header>
@@ -50,7 +48,6 @@ const App = () => {
             id="editor"
             onChange={handleChange}
             defaultValue={rawMarkdown}
-            rows={lineCount + 1}
           ></textarea>
         </div>
         <MarkdownRenderer rawMarkdown={rawMarkdown} />
