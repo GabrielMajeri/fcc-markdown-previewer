@@ -1,12 +1,37 @@
 import React, { useState } from "react";
 import "./App.css";
-import showdown from "showdown";
+import marked from "marked";
 
 const App = () => {
-  const [rawMarkdown, setRawMarkdown] = useState("**Hello**, _world_!");
+  const defaultMarkdownContent = `
+  # Example Header
+
+  You can **format** the _text_ using Markdown, like \`**this**\`.
+
+  ## Example Sub Header
+
+  - Lists (like this one)
+
+  - Code blocks:
+        print("Hello!")
+
+  - Block quotes:
+    > This is a blockquote.
+    > Somebody said something.
+
+  - Links:
+    [GitHub](https://github.com)
+
+  - Images:
+    ![GitHub Icon](https://github.com/favicon.ico)
+  `;
+
+  const [rawMarkdown, setRawMarkdown] = useState(defaultMarkdownContent);
   const handleChange = e => {
     setRawMarkdown(e.target.value);
   };
+
+  const lineCount = rawMarkdown.split(/\r\n|\r|\n/).length;
 
   return (
     <>
@@ -22,10 +47,10 @@ const App = () => {
         <div>
           <h2>Markdown Input</h2>
           <textarea
-            id="markdown-input"
+            id="editor"
             onChange={handleChange}
             defaultValue={rawMarkdown}
-            rows={10}
+            rows={lineCount + 1}
           ></textarea>
         </div>
         <MarkdownRenderer rawMarkdown={rawMarkdown} />
@@ -34,14 +59,16 @@ const App = () => {
   );
 };
 
-const converter = new showdown.Converter();
+marked.setOptions({
+  breaks: true
+});
 
 const MarkdownRenderer = ({ rawMarkdown }) => {
-  const html = converter.makeHtml(rawMarkdown);
+  const html = marked(rawMarkdown);
   return (
     <div>
       <h2>Rendered Output</h2>
-      <output dangerouslySetInnerHTML={{ __html: html }}></output>
+      <output id="preview" dangerouslySetInnerHTML={{ __html: html }}></output>
     </div>
   );
 };
