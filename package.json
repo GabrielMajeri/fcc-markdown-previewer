@@ -2,10 +2,16 @@
   "name": "markdown-previewer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gabrielmajeri.ro/fcc-markdown-previewer/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GabrielMajeri/fcc-markdown-previewer"
+  },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "showdown": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,22 +1,20 @@
-.App {
-  text-align: center;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+textarea {
+  width: 100%;
+  resize: vertical;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+@media all and (min-width: 700px) {
+  main {
+    display: flex;
+  }
 
-.App-link {
-  color: #09d3ac;
+  main div {
+    flex: 1;
+  }
 }

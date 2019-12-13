@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import showdown from "showdown";
 
-function App() {
+const App = () => {
+  const [rawMarkdown, setRawMarkdown] = useState("**Hello**, _world_!");
+  const handleChange = e => {
+    setRawMarkdown(e.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+      <header>
+        <h1>Markdown Previewer</h1>
+        <p>This page implements a simple Markdown previewer.</p>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          You can type <a href="https://commonmark.org/">Markdown</a> in the
+          input area and the live preview will appear in the output area.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <main>
+        <div>
+          <h2>Markdown Input</h2>
+          <textarea
+            id="markdown-input"
+            onChange={handleChange}
+            defaultValue={rawMarkdown}
+            rows={10}
+          ></textarea>
+        </div>
+        <MarkdownRenderer rawMarkdown={rawMarkdown} />
+      </main>
+    </>
+  );
+};
+
+const converter = new showdown.Converter();
+
+const MarkdownRenderer = ({ rawMarkdown }) => {
+  const html = converter.makeHtml(rawMarkdown);
+  return (
+    <div>
+      <h2>Rendered Output</h2>
+      <output dangerouslySetInnerHTML={{ __html: html }}></output>
     </div>
   );
-}
+};
 
 export default App;
