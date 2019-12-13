@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/fcc-markdown-previewer/static/css/main.d98f72fb.chunk.css",
+    "main.js": "/fcc-markdown-previewer/static/js/main.d608687e.chunk.js",
+    "main.js.map": "/fcc-markdown-previewer/static/js/main.d608687e.chunk.js.map",
+    "runtime-main.js": "/fcc-markdown-previewer/static/js/runtime-main.1a603f99.js",
+    "runtime-main.js.map": "/fcc-markdown-previewer/static/js/runtime-main.1a603f99.js.map",
+    "static/js/2.c6b56f4e.chunk.js": "/fcc-markdown-previewer/static/js/2.c6b56f4e.chunk.js",
+    "static/js/2.c6b56f4e.chunk.js.map": "/fcc-markdown-previewer/static/js/2.c6b56f4e.chunk.js.map",
+    "index.html": "/fcc-markdown-previewer/index.html",
+    "precache-manifest.adfbdc29989500e1ddb0340631c875f4.js": "/fcc-markdown-previewer/precache-manifest.adfbdc29989500e1ddb0340631c875f4.js",
+    "service-worker.js": "/fcc-markdown-previewer/service-worker.js",
+    "static/css/main.d98f72fb.chunk.css.map": "/fcc-markdown-previewer/static/css/main.d98f72fb.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1a603f99.js",
+    "static/js/2.c6b56f4e.chunk.js",
+    "static/css/main.d98f72fb.chunk.css",
+    "static/js/main.d608687e.chunk.js"
+  ]
+}
