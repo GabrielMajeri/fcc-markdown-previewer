@@ -28,6 +28,10 @@ textarea {
   min-height: 50vh;
 }
 
+#preview {
+  border: 1px solid lightgray;
+}
+
 @media all and (min-width: 700px) {
   header {
     max-width: 28rem;

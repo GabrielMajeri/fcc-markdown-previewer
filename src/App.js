@@ -65,7 +65,7 @@ const MarkdownRenderer = ({ rawMarkdown }) => {
   return (
     <div>
       <h2>Rendered Output</h2>
-      <output id="preview" dangerouslySetInnerHTML={{ __html: html }}></output>
+      <div id="preview" dangerouslySetInnerHTML={{ __html: html }}></div>
     </div>
   );
 };
